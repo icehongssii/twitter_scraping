@@ -20,6 +20,7 @@ The `scrape.py` script collects tweet ids. If you know a tweet's id number, you 
   - `pip3 install selenium`
 - tweepy (3.5.0)
   - `pip3 install tweepy`
+- headless option was added
 
 ## Running the scraper
 
@@ -39,6 +40,7 @@ The `scrape.py` script collects tweet ids. If you know a tweet's id number, you 
     - if neither work, google the error (you probably need to install a new driver)
 - does it seem like it's not collecting tweets for days that have tweets?
   - open `scrape.py` and change the delay variable to 2 or 3
+  - encoidng error while making csv file
 
 ## Getting the metadata
 
