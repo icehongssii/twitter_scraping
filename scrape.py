@@ -5,15 +5,23 @@ from time import sleep
 import json
 import datetime
 
+# headless option
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+options.add_argument('window-size=1920x1080')
+options.add_argument("disable-gpu")
+
+
 
 # edit these three variables
-user = 'realdonaldtrump'
-start = datetime.datetime(2010, 1, 1)  # year, month, day
-end = datetime.datetime(2016, 12, 7)  # year, month, day
+user = 'bitmexrekt'
+start = datetime.datetime(2016, 12, 2)  # year, month, day
+end = datetime.datetime(2019, 3,24)  # year, month, day
 
 # only edit these if you're having problems
 delay = 1  # time to wait on each page load before reading the page
-driver = webdriver.Safari()  # options are Chrome() Firefox() Safari()
+driver = webdriver.Chrome('./chromedriver',chrome_options=options)   # options are Chrome() Firefox() Safari()
+
 
 
 # don't mess with this stuff
@@ -31,9 +39,8 @@ def format_day(date):
     return '-'.join([year, month, day])
 
 def form_url(since, until):
-    p1 = 'https://twitter.com/search?f=tweets&vertical=default&q=from%3A'
-    p2 =  user + '%20since%3A' + since + '%20until%3A' + until + 'include%3Aretweets&src=typd'
-    return p1 + p2
+    p3='https://twitter.com/search?q=from%3ABitmexRekt%20since%3A'+since+'%20until%3A'+until+'&src=typd'
+    return p3
 
 def increment_day(date, i):
     return date + datetime.timedelta(days=i)
